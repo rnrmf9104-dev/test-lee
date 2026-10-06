@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>죽향재 | 담양 감성 숙소</title>
+<meta name="description" content="푸르른 대나무숲 담양에서 하루를 쉬어가는 감성 숙소">
+<!-- [수정 가이드] 서체: Pretendard(제목/본문), Noto Sans KR(보조). 바꾸려면 아래 링크와 css/style.css 의 --font 변수를 함께 수정 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ===== 메뉴바 =====
+ [수정 가이드] 메뉴 추가: <li><a href="#섹션id">이름</a></li> 추가 후 같은 id의 <section>을 만든다.
+ 로고 텍스트는 .logo 안의 글자를 수정 -->
+<header class="header" id="header">
+  <a href="#home" class="logo">죽향재</a>
+  <button class="menu-toggle" id="menuToggle" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav class="nav" id="nav">
+    <ul>
+      <li><a href="#home">HOME</a></li>
+      <li><a href="#about">ABOUT</a></li>
+      <li><a href="#room">ROOM</a></li>
+      <li><a href="#damyang">DAMYANG</a></li>
+      <li><a href="#reservation">RESERVATION</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+<!-- ===== HOME: 메인 비주얼 =====
+ [수정 가이드] 배경 이미지는 img 의 src 교체 / 숙소 이름은 h1 / 대표 카피는 .hero-copy p -->
+<section id="home" class="hero">
+  <div class="hero-img">
+    <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1920&q=80" alt="담양 대나무숲 전경">
+  </div>
+  <div class="hero-copy">
+    <h1>죽향재</h1>
+    <p>대나무 바람 속에서,<br>하루를 쉬어가는 집</p>
+    <a href="#reservation" class="btn-reserve">예약 안내 보기</a>
+  </div>
+</section>
+
+<!-- ===== ABOUT: 숙소 소개 / 컨셉 / 공간 특징 =====
+ [수정 가이드] 소개 문구는 .about-text, 특징 3가지는 .feature 블록 단위로 수정/복제 -->
+<section id="about" class="section">
+  <div class="container about-grid">
+    <div class="about-text reveal">
+      <h2>자연 속에서<br>하루를 쉬어가는 공간</h2>
+      <p>죽향재는 담양의 푸른 대나무숲 옆에 자리한 작은 한옥 스테이입니다. 화려한 시설보다 햇살, 바람, 나무 향이 먼저 닿는 하루를 준비했습니다.</p>
+      <ul class="features">
+        <li class="feature"><strong>하루 3팀만</strong><span>조용히 머무를 수 있도록 객실을 제한합니다.</span></li>
+        <li class="feature"><strong>대숲 전망</strong><span>모든 객실 창으로 대나무숲이 보입니다.</span></li>
+        <li class="feature"><strong>따뜻한 목재 공간</strong><span>편백과 황토로 마감한 온돌방입니다.</span></li>
+      </ul>
+    </div>
+    <div class="about-img reveal">
+      <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=1000&q=80" alt="숙소 외관">
+    </div>
+  </div>
+</section>
+
+<!-- ===== ROOM: 객실 + 주요 공간(SPACE 슬라이드) =====
+ [수정 가이드] 객실 카드는 .room-card 단위로 복제. 정보는 .room-info 안의 글자 수정.
+ 공간 슬라이드는 .slide 하나가 1장. 추가/삭제 시 JS가 점(dot)을 자동 생성 -->
+<section id="room" class="section bg-beige">
+  <div class="container">
+    <h2 class="reveal">ROOM</h2>
+    <p class="lead reveal">마우스를 올리면(모바일은 터치) 객실 정보가 나타납니다.</p>
+    <div class="room-grid">
+      <article class="room-card reveal" tabindex="0">
+        <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=900&q=80" alt="대숲채 객실">
+        <div class="room-title">대숲채</div>
+        <div class="room-info"><h3>대숲채</h3><p>2인 · 온돌 + 침대<br>대숲 전망 툇마루</p><p class="price">180,000원~</p></div>
+      </article>
+      <article class="room-card reveal" tabindex="0">
+        <img src="https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?auto=format&fit=crop&w=900&q=80" alt="마당채 객실">
+        <div class="room-title">마당채</div>
+        <div class="room-info"><h3>마당채</h3><p>4인 · 온돌 2실<br>개별 마당, 바비큐</p><p class="price">280,000원~</p></div>
+      </article>
+      <article class="room-card reveal" tabindex="0">
+        <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=900&q=80" alt="별채 객실">
+        <div class="room-title">별채</div>
+        <div class="room-info"><h3>별채</h3><p>2인 · 독채<br>히노끼 욕조</p><p class="price">240,000원~</p></div>
+      </article>
+    </div>
+
+    <h3 class="sub reveal">SPACE</h3>
+    <div class="slider reveal" id="slider">
+      <div class="slides">
+        <figure class="slide"><img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1400&q=80" alt="라운지"><figcaption>라운지 · 차 한 잔의 여유</figcaption></figure>
+        <figure class="slide"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=80" alt="마당"><figcaption>마당 · 저녁 불멍 공간</figcaption></figure>
+        <figure class="slide"><img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1400&q=80" alt="공용 주방"><figcaption>공용 주방 · 조식 준비</figcaption></figure>
+      </div>
+      <button class="s-btn prev" aria-label="이전">&#10094;</button>
+      <button class="s-btn next" aria-label="다음">&#10095;</button>
+      <div class="dots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DAMYANG: 주변 관광지 / 추천 장소 =====
+ [수정 가이드] .spot 하나가 장소 1곳. h3=장소명, p=설명 -->
+<section id="damyang" class="section">
+  <div class="container">
+    <h2 class="reveal">DAMYANG</h2>
+    <p class="lead reveal">숙소에서 차로 10~20분, 담양의 대표 장소입니다.</p>
+    <div class="spot-grid">
+      <div class="spot reveal" tabindex="0"><img src="https://images.unsplash.com/photo-1528164344705-47542687000d?auto=format&fit=crop&w=800&q=80" alt="죽녹원"><div class="spot-info"><h3>죽녹원</h3><p>대나무 산책로가 이어지는 대표 명소</p></div></div>
+      <div class="spot reveal" tabindex="0"><img src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=800&q=80" alt="메타세쿼이아길"><div class="spot-info"><h3>메타세쿼이아길</h3><p>양옆으로 쭉 뻗은 가로수 드라이브 코스</p></div></div>
+      <div class="spot reveal" tabindex="0"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80" alt="추천 카페"><div class="spot-info"><h3>대숲 카페</h3><p>대나무 라떼와 디저트가 있는 카페</p></div></div>
+      <div class="spot reveal" tabindex="0"><img src="https://images.unsplash.com/photo-1498654896293-37aacf113fd9?auto=format&fit=crop&w=800&q=80" alt="떡갈비 맛집"><div class="spot-info"><h3>담양 떡갈비</h3><p>담양 하면 떠오르는 향토 음식</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RESERVATION: 요금 / 이용 안내 / 예약 =====
+ [수정 가이드] 요금표는 table, 체크인/아웃 시간은 .info-list, 연락처는 .contact 수정 -->
+<section id="reservation" class="section bg-green">
+  <div class="container res-grid">
+    <div class="reveal">
+      <h2>RESERVATION</h2>
+      <table class="price-table">
+        <tr><th>객실</th><th>평일</th><th>주말</th></tr>
+        <tr><td>대숲채</td><td>180,000</td><td>230,000</td></tr>
+        <tr><td>마당채</td><td>280,000</td><td>350,000</td></tr>
+        <tr><td>별채</td><td>240,000</td><td>300,000</td></tr>
+      </table>
+      <ul class="info-list">
+        <li>체크인 15:00 / 체크아웃 11:00</li>
+        <li>조식 제공(1인 12,000원, 사전 신청)</li>
+        <li>전 객실 금연 · 반려동물 동반 불가</li>
+      </ul>
+    </div>
+    <!-- 예약 문의 폼: js/main.js 의 initForm()이 입력 확인 후 안내 메시지를 표시 (실제 전송은 서버 연결 필요) -->
+    <form class="res-form reveal" id="resForm" novalidate>
+      <label>이름<input type="text" name="name" required></label>
+      <label>연락처<input type="tel" name="tel" required placeholder="010-0000-0000"></label>
+      <label>체크인<input type="date" name="checkin" required></label>
+      <label>체크아웃<input type="date" name="checkout" required></label>
+      <label>객실<select name="room"><option>대숲채</option><option>마당채</option><option>별채</option></select></label>
+      <button type="submit" class="btn-reserve">예약 문의하기</button>
+      <p class="form-msg" id="formMsg" role="status"></p>
+      <p class="contact">전화 061-000-0000 · 전남 담양군 ○○면 ○○로 00</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="footer">© 2026 죽향재. 본 사이트는 학습용 예시입니다.</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
